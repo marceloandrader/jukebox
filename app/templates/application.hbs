@@ -1,3 +1,18 @@
-<h2 id="title">Welcome to Ember</h2>
-
-{{outlet}}
+  <div id="loadingMessage">
+    🎥 No se puede acceder a la webcam.
+  </div>
+  <canvas id="canvas" hidden></canvas>
+<div style="text-align: center; display: none;">
+  <EmberYoutube
+    @ytid={{this.currentVideo}}
+    @playerVars={{this.playerVars}}
+    @delegate={{this}}
+    @delegate-as="emberYoutube"
+    @showDebug={{true}}
+  />
+</div>
+<div id="output" hidden>
+  <div id="outputMessage">
+    Coloca el codigo QR en la camara
+  </div>
+</div>
